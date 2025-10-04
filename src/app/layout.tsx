@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Lato  } from "next/font/google";
+import { Lato } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+import UserSync from "@/components/UserSync";
 
 const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "700"], 
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -22,18 +23,21 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider
-     appearance={{
-          variables: {
-            colorPrimary: "#e78a53",
-            colorBackground: "#f3f4f6",
-            colorText: "#111827",
-            colorTextSecondary: "#6b7280",
-            colorInputBackground: "#f3f4f6",
-          },
-        }}
+      appearance={{
+        variables: {
+          colorPrimary: "#e78a53",
+          colorBackground: "#f3f4f6",
+          colorText: "#111827",
+          colorTextSecondary: "#6b7280",
+          colorInputBackground: "#f3f4f6",
+        },
+      }}
     >
       <html lang="en">
-        <body className={`${lato.className} antialiased dark`}>{children}</body>
+        <body className={`${lato.className} antialiased dark`}>
+          <UserSync />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
