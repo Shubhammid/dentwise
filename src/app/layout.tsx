@@ -35,7 +35,7 @@ export default function RootLayout({
           },
         }}
       >
-        <html lang="en">
+        <html lang="en" suppressContentEditableWarning={true}>
           <body className={`${lato.className} antialiased dark`}>
             <UserSync />
             {children}
