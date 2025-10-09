@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import UserSync from "@/components/UserSync";
 import TanStackProvider from "@/components/providers/TanStackProvider";
+import { Toaster } from "sonner";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
         <html lang="en" suppressContentEditableWarning={true}>
           <body className={`${lato.className} antialiased dark`}>
             <UserSync />
+            <Toaster />
             {children}
           </body>
         </html>
