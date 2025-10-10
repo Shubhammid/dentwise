@@ -38,7 +38,6 @@ export default function RootLayout({
       >
         <html lang="en" suppressContentEditableWarning={true}>
           <body className={`${lato.className} antialiased dark`}>
-            <UserSync />
             <Toaster />
             {children}
           </body>
